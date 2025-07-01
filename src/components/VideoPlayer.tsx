@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 const VideoPlayer = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -32,7 +32,7 @@ const VideoPlayer = () => {
         src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       />
 
-      <div className="controls">
+      <div className="controls flex gap-2">
         <button onClick={handlePlay}>▶️ Play</button>
         <button onClick={handlePause}>⏸️ Pause</button>
         <button onClick={handleForward}>⏩ Forward 10s</button>
