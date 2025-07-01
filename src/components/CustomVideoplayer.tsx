@@ -24,8 +24,9 @@ export default function CustomVideoPlayer() {
   return (
     <div className="text-center">
       <video
+        className='rounded-xl absolute top-0 left-0 w-full h-full object-cover z-[-10]'
         ref={videoRef}
-        src="https://your-firebase-video-url.mp4"
+        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         width="640"
         onLoadedMetadata={() => {
           if (videoRef.current) {
@@ -35,18 +36,19 @@ export default function CustomVideoPlayer() {
         controls={false} // hide default controls
       />
 
-      <input
+      <input 
+        
         type="range"
         min={0}
         max={videoRef.current?.duration || 100}
         value={progress}
         onChange={handleSeek}
-        className="w-full my-2"
+        className="w-full my-2 h-4 border-green-400"
       />
 
       <div className="flex justify-center gap-4">
-        <button onClick={() => videoRef.current?.play()}>▶️</button>
-        <button onClick={() => videoRef.current?.pause()}>⏸️</button>
+        <button onClick={() => videoRef.current?.play()}>▶️ Play</button>
+        <button onClick={() => videoRef.current?.pause()}>⏸️ Pause</button>
       </div>
     </div>
   );

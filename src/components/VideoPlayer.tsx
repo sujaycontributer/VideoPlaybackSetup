@@ -24,19 +24,26 @@ const VideoPlayer = () => {
   };
 
   return (
-    <div>
+    <div className='relative w-full h-screen overflow-hidden'>
       <video
-        ref={videoRef}
-        width="640"
-        controls
+       className='absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity-25'
+        controls={false}
+        muted
+        autoPlay
+        loop
         src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       />
 
-      <div className="controls flex gap-2">
+      {/* <div className="controls flex gap-2">
         <button onClick={handlePlay}>▶️ Play</button>
         <button onClick={handlePause}>⏸️ Pause</button>
         <button onClick={handleForward}>⏩ Forward 10s</button>
         <button onClick={handleBackward}>⏪ Backward 10s</button>
+      </div> */}
+        {/* Overlay Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-2">
+        <h1 className="text-4xl font-bold">Welcome to SyncFlix</h1>
+        <p className="text-lg mt-4">Stream together. Stay in sync.</p>
       </div>
     </div>
   );

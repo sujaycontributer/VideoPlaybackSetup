@@ -1,11 +1,13 @@
 import './App.css'
-import VideoPlayer from './components/VideoPlayer'
+import CustomVideoPlayer from './components/CustomVideoplayer'
+import VideoPlayer  from './components/VideoPlayer'
 
 function App() {
 
   return (
     <>
       <VideoPlayer />
+      {/* <CustomVideoPlayer /> */}
     </>
   )
 }
